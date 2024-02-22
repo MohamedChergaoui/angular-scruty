@@ -7,7 +7,7 @@ import { User } from 'src/app/Entity/user';
   providedIn: 'root'
 })
 export class UserService {
-  private url="http://localhost:8081/api/v1//users";
+  private url="http://localhost:8081/api/v1/users";
 
   constructor(private http:HttpClient) { }
   addUsere(User:User):Observable<any>{
@@ -16,7 +16,7 @@ export class UserService {
 
 
   getAllUsers():Observable<User[]>{
-    return this.http.get<User[]>("http://localhost:8081/api/v1//users");
+    return this.http.get<User[]>("http://localhost:8081/api/v1/users");
   } 
   getUserById(id:number):Observable<any>{
     return  this.http.get("http://localhost:8081/api/v1/users/"+id);

@@ -22,7 +22,7 @@
                                         src="assets/img/icons/pdf.svg" alt="img"></a>
                             </li>
                             <li>
-                                <a data-bs-toggle="tooltip" data-bs-placement="top" title="excel"><img
+                                <a  (click)="exportexel()"data-bs-toggle="tooltip" data-bs-placement="top" title="excel"><img
                                         src="assets/img/icons/excel.svg" alt="img"></a>
                             </li>
                             <li>
@@ -34,7 +34,7 @@
                 </div>
 
                 <div class="table-responsive">
-                    <table class="table">
+                    <table class="table" id ="tableData">
                         <thead>
                             <tr>
                                 <th>
@@ -52,6 +52,7 @@
                                 <th>date of birth</th>
                                 <th>Role</th>
                                 <th>Action</th>
+                                <th>Analyses</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -75,10 +76,38 @@
                                     <a class="me-3" routerLink="id/{{user.id}}">
                                         <img src="assets/img/icons/edit.svg" alt="img">
                                     </a>
-                                    <a (click)="deleteUser(user.id)"  class="me-3 confirm-text" >
+                                    <a  data-modal-target="popup-modal" data-modal-toggle="popup-modal" (click)="deleteUser(user.id)"  class="me-3 confirm-text" >
                                         <img src="assets/img/icons/delete.svg" alt="img">
                                     </a>
                                 </td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="openPopup(user.id)">
+                                      Analyse
+                                     </button>
+                                     
+                                     <!-- Modal -->
+                                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                       <div class="modal-dialog">
+                                         <div class="modal-content">
+                                           <div class="modal-header">
+                                             <h5 class="modal-title" id="exampleModalLabel">Analyses</h5>
+                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> X</button>
+                                           </div>
+                                           <div class="modal-body"  *ngFor="let anl of anlyses" >
+                                            <p>
+                                                {{anl.typeAnalyse}}
+                                            </p>
+                                           
+                                           </div>
+                                           <div class="modal-footer">
+                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                                             
+                                           </div>
+                                         </div>
+                                       </div>
+                                     </div>
+                                </td>
+                               
                             </tr>
                         </tbody>
                     </table>

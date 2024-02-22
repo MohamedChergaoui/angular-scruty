@@ -37,6 +37,8 @@ import { SaveResultComponent } from './results/components/save-result/save-resul
 import { UpdateResultComponent } from './results/components/update-result/update-result.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import{HttpClientModule} from '@angular/common/http';
+import { LoginComponent } from './Login/login/login.component';
+import { NavComponent } from './Navbar/nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +75,8 @@ import{HttpClientModule} from '@angular/common/http';
     ResultsComponent,
     SaveResultComponent,
     UpdateResultComponent,
+    LoginComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,

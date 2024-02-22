@@ -1,37 +1,19 @@
+import { Analyse } from "./analyse";
+
 export class User {
-     id:number;
-     nom:string;
-
-    
-     prenom:string;
-
-  
-   
-     address:string;
-
-    
-    
-     tel:string;
-
-
-     ville:string ;
-
-   
-    sexe:string;
-
-    
-   dateNaissance:Date;
-
-   
-     email :string;
-
-   
-    password:string;
-
-  
-     role:string;
-     analyses:[];
-     planifications:[];
+      id:number;
+      nom:string;
+      prenom:string;
+      address:string;
+      tel:string;
+      ville:string ;
+      sexe:string;
+      dateNaissance:Date;
+      email :string;
+      password:string;
+      role:string;
+      analyses: Analyse[];
+     planifications:any[];
 
 
 }

@@ -33,7 +33,7 @@ export class SaveUserComponent implements OnInit {
     })
   }
   navigateToNewUrl(): void {
-    this.user.getAllUsers;
+   
    
     this.router.navigate(['users'], { replaceUrl: true });
    
@@ -52,7 +52,6 @@ export class SaveUserComponent implements OnInit {
   }
   onsbmit(){
     this.addUser();
-    
     this.navigateToNewUrl();
    
    

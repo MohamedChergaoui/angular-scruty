@@ -1,1 +1,95 @@
-<p>analyses works!</p>
+<div class="page-wrapper">
+    <div class="content">
+        <div class="page-header">
+            <div class="page-title">
+                <h4>Analyse List</h4>
+                <h6>Manage your Analyses</h6>
+            </div>
+            <div class="page-btn">
+                <a routerLink="save" class="btn btn-added"><img src="assets/img/icons/plus.svg" alt="img">Add
+                    Analyse</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="table-top">
+                   <!-- TODO: ADD SEARCH INPUT-->
+                    <div class="wordset">
+                        <ul>
+                            <li>
+                                <a data-bs-toggle="tooltip" data-bs-placement="top" title="pdf"><img
+                                        src="assets/img/icons/pdf.svg" alt="img"></a>
+                            </li>
+                            <li>
+                                <a data-bs-toggle="tooltip" data-bs-placement="top" title="excel"><img
+                                        src="assets/img/icons/excel.svg" alt="img"></a>
+                            </li>
+                            <li>
+                                <a data-bs-toggle="tooltip" data-bs-placement="top" title="print"><img
+                                        src="assets/img/icons/printer.svg" alt="img"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <label class="checkboxs">
+                                        <input type="checkbox" id="select-all">
+                                        <span class="checkmarks"></span>
+                                    </label>
+                                </th>
+                                <th>Technicien </th>
+                                <th>TypeAnalyse</th>
+                                <th>commantaires</th>
+                                <th>dateDebut</th>
+                                <th>dateFin</th>
+                                <th>statusAnalyse</th>
+                                <th>statusResult</th>
+                                <th>Action</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let analyse of analyses">
+                                <td>
+                                    <label class="checkboxs">
+                                        <input type="checkbox">
+                                        <span class="checkmarks"></span>
+                                    </label>
+                                </td>
+                                
+                                <td > {{analyse?.technicienResponsable?.nom }}</td>
+                                <td>{{analyse.typeAnalyse}}</td>
+                                <td>{{analyse.commantaires}}</td>
+                                <td>{{analyse.dateDebut}}</td>
+                                <td>{{analyse.dateFin}}</td>
+                                <td>{{analyse.statusAnalyse}}</td>
+                                <td>{{analyse.statusResult}}</td>
+                                
+                                <td>
+                                    <a class="me-3" routerLink="id/{{analyse.id}}">
+                                        <img src="assets/img/icons/edit.svg" alt="img">
+                                    </a>
+                                    <a (click)="deleteAnalyse(analyse.id)"  class="me-3 confirm-text" >
+                                        <img src="assets/img/icons/delete.svg" alt="img">
+                                    </a>
+                                </td>
+                                <td>
+
+                                    <!-- Button trigger modal -->
+
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
